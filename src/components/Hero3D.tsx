@@ -1,18 +1,20 @@
 
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Sphere } from '@react-three/drei';
+import { OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
+import * as THREE from 'three';
 
 function AnimatedSphere() {
   return (
-    <Sphere args={[2, 64, 64]} position={[0, 0, 0]}>
+    <mesh position={[0, 0, 0]}>
+      <sphereGeometry args={[2, 32, 32]} />
       <meshStandardMaterial 
         color="#3b82f6" 
         transparent 
         opacity={0.6}
         wireframe
       />
-    </Sphere>
+    </mesh>
   );
 }
 
@@ -38,6 +40,7 @@ export default function Hero3D() {
       <Canvas
         camera={{ position: [0, 0, 8], fov: 45 }}
         style={{ background: 'transparent' }}
+        gl={{ antialias: true, alpha: true }}
       >
         <Suspense fallback={null}>
           <Scene />

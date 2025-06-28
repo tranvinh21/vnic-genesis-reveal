@@ -13,7 +13,9 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Suspense fallback={<div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20" />}>
+      <Suspense fallback={
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20" />
+      }>
         <Hero3D />
       </Suspense>
       
