@@ -1,10 +1,10 @@
-
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,72 +23,112 @@ export default function Navigation() {
     }
   };
 
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    document.documentElement.classList.toggle('dark');
+  };
+
   const navItems = [
-    { id: 'goals', label: 'Mục tiêu' },
-    { id: 'overview', label: 'Tổng quan' },
-    { id: 'shoal', label: 'SHOAL' },
-    { id: 'features', label: 'Tính năng' },
-    { id: 'roadmap', label: 'Lộ trình' },
-    { id: 'team', label: 'Đội ngũ' }
+    { id: 'goals', label: 'Architecture' },
+    { id: 'overview', label: 'System' },
+    { id: 'shoal', label: 'Protocol' },
+    { id: 'features', label: 'Integration' },
+    { id: 'roadmap', label: 'Roadmap' },
+    { id: 'team', label: 'Research' }
   ];
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 square-corners ${
       isScrolled 
-        ? 'bg-white/80 backdrop-blur-md shadow-lg border-b border-white/20' 
+        ? 'glass-elegant border-b border-border' 
         : 'bg-transparent'
     }`}>
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-7xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
-              <span className="text-white text-lg">⭐</span>
+          {/* Architectural Logo */}
+          <div className="flex items-center gap-4">
+            <div className="w-8 h-8 bg-accent text-accent-foreground flex items-center justify-center border border-border square-corners">
+              <span className="text-sm font-architectural">◉</span>
             </div>
-            <span className="font-manrope font-bold text-xl bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+            <span className="font-architectural font-bold text-xl text-gradient-elegant tracking-tight">
               VNIChain
             </span>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+          {/* Desktop Navigation - Architectural Style */}
+          <div className="hidden md:flex items-center">
+            {navItems.map((item, index) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="font-inter font-medium text-gray-700 hover:text-orange-500 transition-colors duration-200 relative group"
+                className={`px-6 py-2 font-technical font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-all border-r border-border square-corners ${
+                  index === 0 ? 'border-l border-border' : ''
+                }`}
               >
                 {item.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-orange-500 to-red-500 group-hover:w-full transition-all duration-300"></span>
               </button>
             ))}
           </div>
 
+          {/* Right Side Actions - Technical Interface */}
+          <div className="hidden md:flex items-center gap-0 border border-border square-corners">
+            <button className="px-4 py-2 font-technical font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-all border-r border-border square-corners">
+              Docs
+            </button>
+            <button className="px-4 py-2 bg-accent text-accent-foreground font-technical font-medium hover:bg-muted transition-all border-r border-border square-corners">
+              API
+            </button>
+            
+            {/* Theme Toggle */}
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted transition-all square-corners"
+            >
+              {isDarkMode ? (
+                <Sun className="w-4 h-4" />
+              ) : (
+                <Moon className="w-4 h-4" />
+              )}
+            </button>
+          </div>
+
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 border border-border hover:bg-muted transition-all square-corners"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-gray-700" />
+              <X className="w-5 h-5 text-foreground" />
             ) : (
-              <Menu className="w-6 h-6 text-gray-700" />
+              <Menu className="w-5 h-5 text-foreground" />
             )}
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Menu - Architectural Grid */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-white/20 py-4 animate-slide-in">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left px-4 py-3 font-inter font-medium text-gray-700 hover:text-orange-500 hover:bg-orange-50 transition-colors duration-200"
-              >
-                {item.label}
+          <div className="md:hidden glass-elegant border-t border-border square-corners animate-slide-up-elegant">
+            <div className="grid grid-cols-1 gap-0">
+              {navItems.map((item, index) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`px-6 py-4 font-technical font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-all text-left border-b border-border square-corners ${
+                    index === navItems.length - 1 ? 'border-b-0' : ''
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+            <div className="flex border-t border-border">
+              <button className="flex-1 px-6 py-4 font-technical font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-all border-r border-border square-corners">
+                Documentation
               </button>
-            ))}
+              <button className="flex-1 px-6 py-4 bg-accent text-accent-foreground font-technical font-medium hover:bg-muted transition-all square-corners">
+                API Access
+              </button>
+            </div>
           </div>
         )}
       </div>

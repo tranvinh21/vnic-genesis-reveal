@@ -1,64 +1,100 @@
-
 export default function GoalsSection() {
-  const goals = [
+  const specifications = [
     {
-      emoji: "⚡",
-      title: "Hiệu suất & Trải nghiệm",
-      subtitle: "Performance & Experience",
-      description: "Tốc độ xử lý 150,000 TPS với trải nghiệm người dùng mượt mà"
+      icon: "⚡",
+      title: "Performance Architecture",
+      description: "Lightning-fast transaction processing with 150,000+ TPS and instant finality optimized for real-world blockchain applications"
     },
     {
-      emoji: "🛡️",
-      title: "An ninh Tài chính",
-      subtitle: "Financial Security",
-      description: "Bảo mật tuyệt đối với các giao dịch và tài sản số"
+      icon: "🛡️",
+      title: "Security Framework",
+      description: "Military-grade encryption protocols with advanced consensus mechanisms ensuring maximum security for enterprise digital assets"
     },
     {
-      emoji: "🔧",
-      title: "Ổn định và đáng tin cậy",
-      subtitle: "Stable & Reliable",
-      description: "Hạ tầng blockchain ổn định, hoạt động 24/7"
+      icon: "🔧",
+      title: "Developer Infrastructure",
+      description: "Comprehensive APIs, SDKs, and development tools designed for rapid blockchain application development and deployment"
     },
     {
-      emoji: "🏗️",
-      title: "Hạ tầng Dịch vụ",
-      subtitle: "Service Infrastructure",
-      description: "Nền tảng hoàn chỉnh cho các ứng dụng phi tập trung"
+      icon: "🏗️",
+      title: "Scalable System",
+      description: "Built to scale from prototype to enterprise with automated load balancing and global infrastructure distribution"
     }
   ];
 
   return (
-    <section id="goals" className="py-20 bg-gradient-to-b from-white to-blue-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16 animate-slide-in">
-          <h2 className="font-manrope text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Mục tiêu của chúng tôi
+    <section id="goals" className="py-24 bg-background square-corners">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Technical Header */}
+        <div className="text-center mb-20 animate-slide-up-elegant">
+          <div className="inline-block border border-border px-6 py-2 square-corners mb-8">
+            <span className="font-technical text-sm text-muted-foreground uppercase tracking-wider">
+              SYSTEM ARCHITECTURE & DESIGN PRINCIPLES
+            </span>
+          </div>
+          
+          <h2 className="font-architectural text-4xl md:text-5xl font-bold text-foreground mb-8 tracking-tight">
+            Built for the future of blockchain
           </h2>
-          <p className="font-inter text-xl text-gray-600 max-w-3xl mx-auto">
-            VNIChain được thiết kế để giải quyết những thách thức lớn nhất trong thế giới blockchain
+          
+          <div className="divider-elegant max-w-4xl mx-auto"></div>
+          
+          <p className="font-technical text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mt-8">
+            VNIChain addresses the critical challenges in blockchain technology with a 
+            focus on performance, security, and developer experience through advanced architectural design.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {goals.map((goal, index) => (
+        {/* Technical Specifications Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border border-border square-corners">
+          {specifications.map((spec, index) => (
             <div
               key={index}
-              className="group relative bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-white/50 hover:border-white/80 animate-slide-in"
+              className={`p-12 hover:bg-muted transition-all group animate-fade-in-geometric ${
+                index % 2 !== 0 ? 'border-l border-border' : ''
+              } ${
+                index >= 2 ? 'border-t border-border' : ''
+              }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Enhanced Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-blue-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm"></div>
-              
-              <div className="relative z-10">
-                <div className="text-4xl mb-4 animate-float" style={{ animationDelay: `${index * 0.2}s` }}>
-                  {goal.emoji}
+              <div className="flex items-start gap-6">
+                <div className="flex-shrink-0 w-12 h-12 border border-border flex items-center justify-center group-hover:bg-accent group-hover:text-accent-foreground transition-all square-corners">
+                  <span className="text-2xl">{spec.icon}</span>
                 </div>
-                <h3 className="font-manrope text-xl font-bold text-gray-900 mb-2">{goal.title}</h3>
-                <p className="font-inter text-sm font-medium text-blue-600 mb-4">{goal.subtitle}</p>
-                <p className="font-inter text-gray-600 leading-relaxed">{goal.description}</p>
+                
+                <div className="flex-1">
+                  <h3 className="font-architectural text-xl font-bold text-foreground mb-4">
+                    {spec.title}
+                  </h3>
+                  
+                  <p className="font-technical text-muted-foreground leading-relaxed">
+                    {spec.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Performance Metrics */}
+        <div className="mt-16 grid grid-cols-4 gap-0 border border-border square-corners">
+          <div className="p-8 text-center border-r border-border">
+            <div className="font-architectural text-3xl font-bold text-foreground mb-2">150K+</div>
+            <div className="font-technical text-sm text-muted-foreground uppercase tracking-wider">Transactions/Second</div>
+          </div>
+          <div className="p-8 text-center border-r border-border">
+            <div className="font-architectural text-3xl font-bold text-foreground mb-2">&lt;100ms</div>
+            <div className="font-technical text-sm text-muted-foreground uppercase tracking-wider">Block Time</div>
+          </div>
+          <div className="p-8 text-center border-r border-border">
+            <div className="font-architectural text-3xl font-bold text-foreground mb-2">99.99%</div>
+            <div className="font-technical text-sm text-muted-foreground uppercase tracking-wider">Uptime SLA</div>
+          </div>
+          <div className="p-8 text-center">
+            <div className="font-architectural text-3xl font-bold text-foreground mb-2">∞</div>
+            <div className="font-technical text-sm text-muted-foreground uppercase tracking-wider">Scalability</div>
+          </div>
         </div>
       </div>
     </section>

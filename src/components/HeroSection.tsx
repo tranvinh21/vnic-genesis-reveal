@@ -1,4 +1,3 @@
-
 import { Suspense } from 'react';
 import Hero3D from './Hero3D';
 import { ArrowDown } from 'lucide-react';
@@ -12,77 +11,80 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden architectural-grid square-corners">
+      {/* Geometric Abstract Elements */}
+      <div className="geometric-abstract"></div>
+      
+      {/* 3D Hero Element */}
       <Suspense fallback={
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-background/80 to-muted/20" />
       }>
         <Hero3D />
       </Suspense>
       
-      {/* Enhanced Glassmorphism overlay */}
-      <div className="absolute inset-0 bg-black/20 backdrop-blur-[1px]"></div>
+      {/* Linear Art Overlay */}
+      <div className="absolute inset-0 linear-art"></div>
       
-      <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto animate-slide-in">
-        {/* Logo and Brand */}
-        <div className="mb-8">
-          <div className="inline-flex items-center gap-3 mb-4 animate-float">
-            <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center animate-glow">
-              <span className="text-2xl">⭐</span>
+      <div className="relative z-10 text-center text-foreground px-6 max-w-7xl mx-auto animate-slide-up-elegant square-corners">
+        
+        {/* Architectural Brand Section */}
+        <div className="mb-16 animate-fade-in-geometric">
+          <div className="inline-flex items-center gap-6 mb-8">
+            <div className="w-16 h-16 bg-accent text-accent-foreground flex items-center justify-center border border-border shadow-lg square-corners">
+              <span className="text-2xl font-architectural">◉</span>
             </div>
-            <h1 className="font-manrope text-4xl md:text-6xl font-bold bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">
+            <h1 className="font-architectural text-6xl md:text-8xl font-bold text-gradient-elegant tracking-tight">
               VNIChain
             </h1>
           </div>
+        </div>
+
+        {/* Main Technical Statement */}
+        <div className="mb-20">
+          <h2 className="font-architectural text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-none tracking-tight">
+            The Blockchain Operating System
+          </h2>
           
-          <p className="font-manrope text-xl md:text-2xl font-semibold text-blue-300 mb-2">
-            Bảo mật. Đơn giản. Toàn cầu.
-          </p>
-          <p className="font-inter text-lg md:text-xl text-gray-300">
-            Security. Simple. Global.
+          <div className="divider-elegant max-w-2xl mx-auto"></div>
+          
+          <p className="font-technical text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mt-8">
+            Create production-ready blockchain solutions in a single API call
           </p>
         </div>
 
-        {/* Main Tagline */}
-        <h2 className="font-manrope text-3xl md:text-5xl font-bold mb-6 leading-tight">
-          Blockchain nhanh nhất cho
-          <br />
-          <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-            người dùng thật, tương tác thật
-          </span>
-        </h2>
-
-        {/* Enhanced Key Stats with glassmorphism */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
-          <div className="group bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-            <div className="font-manrope text-3xl font-bold text-yellow-400 group-hover:animate-glow">150,000</div>
-            <div className="font-inter text-sm text-gray-300">TPS Performance</div>
-          </div>
-          <div className="group bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-            <div className="font-manrope text-3xl font-bold text-blue-400 group-hover:animate-glow">Cosmos</div>
-            <div className="font-inter text-sm text-gray-300">SDK Integration</div>
-          </div>
-          <div className="group bg-white/10 backdrop-blur-xl rounded-2xl p-6 border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl">
-            <div className="font-manrope text-3xl font-bold text-green-400 group-hover:animate-glow">Free</div>
-            <div className="font-inter text-sm text-gray-300">Verified Transactions</div>
-          </div>
-        </div>
-
-        {/* Enhanced CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <button className="px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white font-manrope font-semibold rounded-xl hover:from-orange-600 hover:to-red-600 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl backdrop-blur-sm">
-            Khám phá VNIChain
+        {/* Architectural Action Interface */}
+        <div className="flex flex-col sm:flex-row gap-0 justify-center mb-24 border border-border square-corners">
+          <button className="px-12 py-4 bg-accent text-accent-foreground font-technical font-medium hover:bg-muted transition-all border-r border-border square-corners">
+            $ vnic init
           </button>
-          <button className="px-8 py-4 bg-white/10 backdrop-blur-xl text-white font-manrope font-semibold rounded-xl border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all transform hover:scale-105 shadow-lg hover:shadow-xl">
-            Xem Demo
+          <button className="px-12 py-4 bg-background text-foreground font-technical font-medium hover:bg-muted transition-all border-l border-border square-corners">
+            Documentation →
           </button>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Technical Specifications Grid */}
+        <div className="grid grid-cols-3 gap-0 max-w-3xl mx-auto mb-20 border border-border square-corners">
+          <div className="p-6 text-center border-r border-border">
+            <div className="font-architectural text-2xl font-bold text-foreground mb-2">150K+</div>
+            <div className="font-technical text-sm text-muted-foreground uppercase tracking-wider">TPS</div>
+          </div>
+          <div className="p-6 text-center border-r border-border">
+            <div className="font-architectural text-2xl font-bold text-foreground mb-2">∞</div>
+            <div className="font-technical text-sm text-muted-foreground uppercase tracking-wider">SCALE</div>
+          </div>
+          <div className="p-6 text-center">
+            <div className="font-architectural text-2xl font-bold text-foreground mb-2">0ms</div>
+            <div className="font-technical text-sm text-muted-foreground uppercase tracking-wider">LATENCY</div>
+          </div>
+        </div>
+
+        {/* Navigation Indicator */}
         <button 
           onClick={scrollToNext}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hover:text-orange-400 transition-colors"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 p-4 border border-border hover:bg-muted transition-all square-corners"
+          aria-label="Scroll to next section"
         >
-          <ArrowDown className="w-6 h-6 text-white/60" />
+          <ArrowDown className="w-5 h-5 text-muted-foreground" />
         </button>
       </div>
     </section>

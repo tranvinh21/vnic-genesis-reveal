@@ -2,95 +2,100 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Elegant, Linear, Square-Cornered Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 9%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 0 0% 9%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 0 0% 9%;
 
-    --radius: 0.5rem;
+    --radius: 0rem;
 
     --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-foreground: 0 0% 9%;
+    --sidebar-primary: 0 0% 9%;
     --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 9%;
+    --sidebar-border: 0 0% 89%;
+    --sidebar-ring: 0 0% 9%;
 
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    /* Elegant geometric color variables */
+    --accent-primary: 0 0% 9%;
+    --accent-secondary: 0 0% 45%;
+    --line-primary: 0 0% 78%;
+    --line-secondary: 0 0% 94%;
+    --surface-elevated: 0 0% 100%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 9%;
+    --foreground: 0 0% 98%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 14%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 64%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 98%;
+    --accent-foreground: 0 0% 9%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62% 31%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 98%;
+
+    --sidebar-background: 0 0% 9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 9%;
+    --sidebar-accent: 0 0% 14%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 0% 98%;
+
+    --accent-primary: 0 0% 98%;
+    --accent-secondary: 0 0% 64%;
+    --line-primary: 0 0% 29%;
+    --line-secondary: 0 0% 20%;
+    --surface-elevated: 0 0% 9%;
   }
 }
 
@@ -99,7 +104,252 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html, body, #root {
+    border-radius: 0 !important;
+  }
+
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
   }
+}
+
+/* Architectural Grid Background */
+.architectural-grid {
+  background-color: hsl(var(--background));
+  background-image: 
+    linear-gradient(hsl(var(--line-primary) / 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--line-primary) / 0.3) 1px, transparent 1px),
+    linear-gradient(hsl(var(--line-secondary) / 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, hsl(var(--line-secondary) / 0.2) 1px, transparent 1px);
+  background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px;
+  position: relative;
+}
+
+.architectural-grid::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 25% 25%, hsl(var(--accent-primary) / 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 75% 75%, hsl(var(--accent-primary) / 0.05) 0%, transparent 50%);
+  animation: drift-architectural 20s linear infinite;
+}
+
+/* Abstract Geometric Shapes */
+.geometric-abstract {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.geometric-abstract::before {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 2px solid hsl(var(--accent-primary) / 0.1);
+  top: 20%;
+  left: 10%;
+  animation: float-geometric 15s ease-in-out infinite;
+}
+
+.geometric-abstract::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 1px solid hsl(var(--accent-secondary) / 0.2);
+  top: 60%;
+  right: 15%;
+  animation: float-geometric 12s ease-in-out infinite reverse;
+}
+
+/* Linear Art Elements */
+.linear-art {
+  position: relative;
+}
+
+.linear-art::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    hsl(var(--accent-primary) / 0.3) 25%, 
+    hsl(var(--accent-primary) / 0.6) 50%, 
+    hsl(var(--accent-primary) / 0.3) 75%, 
+    transparent 100%
+  );
+  animation: pulse-line 3s ease-in-out infinite;
+}
+
+.linear-art::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    hsl(var(--accent-secondary) / 0.2) 25%, 
+    hsl(var(--accent-secondary) / 0.4) 50%, 
+    hsl(var(--accent-secondary) / 0.2) 75%, 
+    transparent 100%
+  );
+  animation: pulse-line 3s ease-in-out infinite 1.5s;
+}
+
+/* Elegant Animations */
+@keyframes drift-architectural {
+  0% { transform: translateX(0) translateY(0); }
+  25% { transform: translateX(-10px) translateY(-5px); }
+  50% { transform: translateX(5px) translateY(-10px); }
+  75% { transform: translateX(-5px) translateY(5px); }
+  100% { transform: translateX(0) translateY(0); }
+}
+
+@keyframes float-geometric {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33% { transform: translateY(-20px) rotate(2deg); }
+  66% { transform: translateY(-10px) rotate(-1deg); }
+}
+
+@keyframes pulse-line {
+  0%, 100% { opacity: 0.3; transform: scaleX(0.8); }
+  50% { opacity: 0.8; transform: scaleX(1.1); }
+}
+
+@keyframes slide-up-elegant {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in-geometric {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Elegant utility classes */
+.animate-slide-up-elegant {
+  animation: slide-up-elegant 1s ease-out;
+}
+
+.animate-fade-in-geometric {
+  animation: fade-in-geometric 0.8s ease-out;
+}
+
+.text-gradient-elegant {
+  background: linear-gradient(135deg, hsl(var(--accent-primary)), hsl(var(--accent-secondary)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-elegant {
+  background: hsl(var(--surface-elevated) / 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid hsl(var(--line-primary) / 0.3);
+}
+
+.glass-subtle {
+  background: hsl(var(--surface-elevated) / 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(var(--line-secondary) / 0.2);
+}
+
+/* Square corner enforcement */
+.square-corners,
+.square-corners * {
+  border-radius: 0 !important;
+}
+
+/* Architectural Typography */
+.font-architectural {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.font-technical {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+}
+
+/* Linear Dividers */
+.divider-elegant {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    hsl(var(--line-primary) / 0.4) 20%, 
+    hsl(var(--line-primary) / 0.8) 50%, 
+    hsl(var(--line-primary) / 0.4) 80%, 
+    transparent 100%
+  );
+  margin: 2rem 0;
+}
+
+/* Architectural Cards */
+.card-architectural {
+  background: hsl(var(--surface-elevated));
+  border: 1px solid hsl(var(--line-primary) / 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-architectural::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: hsl(var(--accent-primary) / 0.1);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.card-architectural:hover::before {
+  transform: scaleX(1);
+}
+
+/* Abstract Patterns */
+.pattern-dots {
+  background-image: radial-gradient(circle, hsl(var(--accent-primary) / 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+.pattern-lines {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    hsl(var(--line-secondary) / 0.1) 10px,
+    hsl(var(--line-secondary) / 0.1) 11px
+  );
 }

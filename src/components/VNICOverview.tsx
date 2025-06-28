@@ -1,85 +1,104 @@
-
 export default function VNICOverview() {
-  const features = [
+  const specifications = [
     {
       icon: "⚡",
       title: "150,000 TPS",
-      description: "Hiệu suất vượt trội với khả năng xử lý 150,000 giao dịch mỗi giây"
+      description: "Ultra-high performance transaction processing capability for enterprise applications"
     },
     {
       icon: "🌐",
       title: "Cosmos SDK",
-      description: "Tích hợp hoàn hảo với hệ sinh thái Cosmos cho khả năng tương tác"
+      description: "Seamless integration with Cosmos ecosystem for maximum interoperability"
     },
     {
       icon: "🆔",
       title: "VNIC ID",
-      description: "Hệ thống nhận dạng phi tập trung an toàn và dễ sử dụng"
+      description: "Decentralized identity system with advanced security and ease of use"
     },
     {
       icon: "💰",
-      title: "Giao dịch miễn phí",
-      description: "Người dùng đã xác minh được thực hiện giao dịch hoàn toàn miễn phí"
+      title: "Zero-Cost Transactions",
+      description: "Verified users enjoy completely fee-free transaction processing"
     }
   ];
 
   return (
-    <section id="overview" className="py-20 bg-gradient-to-b from-slate-900 to-purple-900 text-white overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16 animate-slide-in">
-          <h2 className="font-manrope text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            VNIC là Blockchain nhanh nhất cho
+    <section id="overview" className="py-24 bg-background square-corners">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Technical Header */}
+        <div className="text-center mb-20 animate-slide-up-elegant">
+          <div className="inline-block border border-border px-6 py-2 square-corners mb-8">
+            <span className="font-technical text-sm text-muted-foreground uppercase tracking-wider">
+              BLOCKCHAIN OPERATING SYSTEM OVERVIEW
+            </span>
+          </div>
+          
+          <h2 className="font-architectural text-4xl md:text-6xl font-bold text-foreground mb-8 tracking-tight">
+            VNIC is the fastest blockchain for
             <br />
-            <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-              người dùng thật, tương tác thật
+            <span className="text-gradient-elegant">
+              real users, real interactions
             </span>
           </h2>
-          <p className="font-inter text-xl text-gray-300 max-w-4xl mx-auto">
-            Với công nghệ SHOAL consensus và tích hợp Cosmos SDK, VNIChain mang đến trải nghiệm blockchain hoàn toàn mới
+          
+          <div className="divider-elegant max-w-4xl mx-auto"></div>
+          
+          <p className="font-technical text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed mt-8">
+            Powered by SHOAL consensus and Cosmos SDK integration, VNIChain delivers a completely new blockchain experience
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-          {features.map((feature, index) => (
+        {/* Technical Specifications Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-border square-corners mb-16">
+          {specifications.map((spec, index) => (
             <div
               key={index}
-              className="group bg-white/10 backdrop-blur-xl rounded-2xl p-8 border border-white/20 hover:bg-white/20 hover:border-white/30 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl animate-slide-in"
+              className={`p-8 hover:bg-muted transition-all group animate-fade-in-geometric ${
+                index % 4 !== 3 ? 'border-r border-border' : ''
+              }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-4xl mb-4 animate-float" style={{ animationDelay: `${index * 0.2}s` }}>
-                {feature.icon}
+              <div className="text-center">
+                <div className="inline-flex p-4 border border-border group-hover:bg-accent group-hover:text-accent-foreground transition-all square-corners mb-6">
+                  <span className="text-3xl">{spec.icon}</span>
+                </div>
+                <h3 className="font-architectural text-xl font-bold text-foreground mb-4">
+                  {spec.title}
+                </h3>
+                <p className="font-technical text-muted-foreground leading-relaxed">
+                  {spec.description}
+                </p>
               </div>
-              <h3 className="font-manrope text-2xl font-bold mb-4 text-yellow-400 group-hover:animate-glow">
-                {feature.title}
-              </h3>
-              <p className="font-inter text-gray-300 leading-relaxed">{feature.description}</p>
             </div>
           ))}
         </div>
 
-        {/* Enhanced Performance Comparison */}
-        <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/20 hover:border-white/30 transition-all duration-300 group">
-          <h3 className="font-manrope text-3xl font-bold text-center mb-8">So sánh hiệu suất</h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-            <div className="text-center group hover:scale-105 transition-transform duration-300">
-              <div className="font-manrope text-2xl font-bold text-green-400">VNIChain</div>
-              <div className="font-manrope text-4xl font-bold text-yellow-400 group-hover:animate-glow">150,000</div>
-              <div className="font-inter text-sm text-gray-400">TPS</div>
+        {/* Performance Comparison Table */}
+        <div className="border border-border square-corners">
+          <div className="p-6 border-b border-border">
+            <h3 className="font-architectural text-2xl font-bold text-foreground text-center">Performance Comparison</h3>
+          </div>
+          <div className="grid grid-cols-4 gap-0">
+            <div className="p-6 text-center border-r border-border hover:bg-muted transition-all">
+              <div className="font-architectural text-lg font-bold text-foreground mb-2">VNIChain</div>
+              <div className="font-architectural text-3xl font-bold text-foreground mb-2">150,000</div>
+              <div className="font-technical text-sm text-muted-foreground uppercase tracking-wider">TPS</div>
             </div>
-            <div className="text-center group hover:scale-105 transition-transform duration-300">
-              <div className="font-manrope text-2xl font-bold text-purple-400">Solana</div>
-              <div className="font-manrope text-4xl font-bold">65,000</div>
-              <div className="font-inter text-sm text-gray-400">TPS</div>
+            <div className="p-6 text-center border-r border-border hover:bg-muted transition-all">
+              <div className="font-architectural text-lg font-bold text-muted-foreground mb-2">Solana</div>
+              <div className="font-architectural text-3xl font-bold text-muted-foreground mb-2">65,000</div>
+              <div className="font-technical text-sm text-muted-foreground uppercase tracking-wider">TPS</div>
             </div>
-            <div className="text-center group hover:scale-105 transition-transform duration-300">
-              <div className="font-manrope text-2xl font-bold text-blue-400">Ethereum</div>
-              <div className="font-manrope text-4xl font-bold">15</div>
-              <div className="font-inter text-sm text-gray-400">TPS</div>
+            <div className="p-6 text-center border-r border-border hover:bg-muted transition-all">
+              <div className="font-architectural text-lg font-bold text-muted-foreground mb-2">Ethereum</div>
+              <div className="font-architectural text-3xl font-bold text-muted-foreground mb-2">15</div>
+              <div className="font-technical text-sm text-muted-foreground uppercase tracking-wider">TPS</div>
             </div>
-            <div className="text-center group hover:scale-105 transition-transform duration-300">
-              <div className="font-manrope text-2xl font-bold text-red-400">Visa</div>
-              <div className="font-manrope text-4xl font-bold">24,000</div>
-              <div className="font-inter text-sm text-gray-400">TPS</div>
+            <div className="p-6 text-center hover:bg-muted transition-all">
+              <div className="font-architectural text-lg font-bold text-muted-foreground mb-2">Visa</div>
+              <div className="font-architectural text-3xl font-bold text-muted-foreground mb-2">24,000</div>
+              <div className="font-technical text-sm text-muted-foreground uppercase tracking-wider">TPS</div>
             </div>
           </div>
         </div>

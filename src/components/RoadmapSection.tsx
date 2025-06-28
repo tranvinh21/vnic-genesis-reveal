@@ -1,86 +1,111 @@
-
 export default function RoadmapSection() {
   const roadmapItems = [
     {
       title: "Optimistic Rollup",
-      description: "Tăng cường khả năng mở rộng với Layer 2 solutions",
-      status: "Đang phát triển",
+      description: "Enhanced scalability with Layer 2 solutions for enterprise deployment",
+      status: "In Development",
       icon: "🚀"
     },
     {
       title: "Anonymous Transactions",
-      description: "Giao dịch ẩn danh bảo vệ quyền riêng tư người dùng",
-      status: "Nghiên cứu",
+      description: "Privacy-preserving transactions for sensitive enterprise applications",
+      status: "Research Phase",
       icon: "🔒"
     },
     {
       title: "RWA Modules",
-      description: "Tích hợp tài sản thực (Real World Assets)",
-      status: "Lên kế hoạch",
+      description: "Real World Assets integration for institutional adoption",
+      status: "Planning Phase",
       icon: "🏠"
     }
   ];
 
   return (
-    <section id="roadmap" className="py-20 bg-gradient-to-b from-white to-blue-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16 animate-slide-in">
-          <h2 className="font-manrope text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Roadmap tương lai
+    <section id="roadmap" className="py-24 bg-background square-corners">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Technical Header */}
+        <div className="text-center mb-20">
+          <div className="inline-block border border-border px-6 py-2 square-corners mb-8">
+            <span className="font-technical text-sm text-muted-foreground uppercase tracking-wider">
+              DEVELOPMENT ROADMAP
+            </span>
+          </div>
+          
+          <h2 className="font-architectural text-4xl md:text-5xl font-bold text-foreground mb-8">
+            Future Development
           </h2>
-          <p className="font-inter text-xl text-gray-600 max-w-3xl mx-auto">
-            Những cải tiến và tính năng mới sẽ được triển khai trong tương lai gần
+          
+          <div className="divider-elegant max-w-4xl mx-auto"></div>
+          
+          <p className="font-technical text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mt-8">
+            Planned enhancements and features for next-generation blockchain infrastructure
           </p>
         </div>
 
-        <div className="relative">
-          {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-orange-400 to-blue-500 h-full"></div>
-
-          <div className="space-y-16">
-            {roadmapItems.map((item, index) => (
-              <div
-                key={index}
-                className={`flex items-center ${
-                  index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                } gap-8 animate-slide-in`}
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
-                {/* Content */}
-                <div className="flex-1">
-                  <div
-                    className={`bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-lg border border-white/50 hover:bg-white/90 hover:border-white/70 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl ${
-                      index % 2 === 0 ? 'ml-auto' : 'mr-auto'
-                    } max-w-md`}
-                  >
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="text-4xl animate-float" style={{ animationDelay: `${index * 0.3}s` }}>
-                        {item.icon}
-                      </div>
-                      <div>
-                        <h3 className="font-manrope text-2xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                        <span className={`text-sm px-3 py-1 rounded-full font-inter font-medium ${
-                          item.status === 'Đang phát triển' 
-                            ? 'bg-green-100 text-green-700'
-                            : item.status === 'Nghiên cứu'
-                            ? 'bg-yellow-100 text-yellow-700'
-                            : 'bg-blue-100 text-blue-700'
-                        }`}>
-                          {item.status}
-                        </span>
-                      </div>
-                    </div>
-                    <p className="font-inter text-gray-600 leading-relaxed">{item.description}</p>
-                  </div>
+        {/* Roadmap Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-border square-corners">
+          {roadmapItems.map((item, index) => (
+            <div
+              key={index}
+              className={`p-12 hover:bg-muted transition-all group animate-fade-in-geometric ${
+                index !== roadmapItems.length - 1 ? 'border-r border-border' : ''
+              }`}
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              {/* Status Badge */}
+              <div className="mb-8">
+                <div className={`inline-block px-4 py-2 border square-corners font-technical text-sm uppercase tracking-wider ${
+                  item.status === 'In Development' 
+                    ? 'border-accent text-accent'
+                    : item.status === 'Research Phase'
+                    ? 'border-muted-foreground text-muted-foreground'
+                    : 'border-muted-foreground text-muted-foreground'
+                }`}>
+                  {item.status}
                 </div>
-
-                {/* Timeline dot */}
-                <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-blue-500 rounded-full border-4 border-white shadow-lg z-10 animate-glow"></div>
-
-                {/* Spacer */}
-                <div className="flex-1"></div>
               </div>
-            ))}
+
+              {/* Icon */}
+              <div className="border border-border p-6 square-corners group-hover:bg-accent group-hover:text-accent-foreground transition-all mb-8 inline-block">
+                <span className="text-4xl">{item.icon}</span>
+              </div>
+
+              {/* Content */}
+              <h3 className="font-architectural text-2xl font-bold text-foreground mb-4">
+                {item.title}
+              </h3>
+              
+              <p className="font-technical text-muted-foreground leading-relaxed">
+                {item.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Timeline Visualization */}
+        <div className="mt-16 border border-border square-corners">
+          <div className="p-6 border-b border-border">
+            <h3 className="font-architectural text-lg font-bold text-foreground text-center">Development Timeline</h3>
+          </div>
+          <div className="p-8">
+            <div className="grid grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-4 h-4 bg-accent square-corners mx-auto mb-4"></div>
+                <div className="font-technical text-sm text-accent uppercase tracking-wider">Q1 2024</div>
+                <div className="font-architectural text-base text-foreground">Optimistic Rollup</div>
+              </div>
+              <div className="text-center">
+                <div className="w-4 h-4 bg-muted-foreground square-corners mx-auto mb-4"></div>
+                <div className="font-technical text-sm text-muted-foreground uppercase tracking-wider">Q2 2024</div>
+                <div className="font-architectural text-base text-foreground">Anonymous Transactions</div>
+              </div>
+              <div className="text-center">
+                <div className="w-4 h-4 bg-muted-foreground square-corners mx-auto mb-4"></div>
+                <div className="font-technical text-sm text-muted-foreground uppercase tracking-wider">Q3 2024</div>
+                <div className="font-architectural text-base text-foreground">RWA Modules</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
