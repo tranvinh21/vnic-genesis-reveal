@@ -1,4 +1,5 @@
 
+import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import GoalsSection from '../components/GoalsSection';
 import VNICOverview from '../components/VNICOverview';
@@ -11,6 +12,7 @@ import Footer from '../components/Footer';
 const Index = () => {
   return (
     <div className="min-h-screen">
+      <Navigation />
       <HeroSection />
       <GoalsSection />
       <VNICOverview />

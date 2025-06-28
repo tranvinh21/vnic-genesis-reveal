@@ -28,13 +28,13 @@ export default function GoalsSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-white to-blue-50">
+    <section id="goals" className="py-20 bg-gradient-to-b from-white to-blue-50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        <div className="text-center mb-16 animate-slide-in">
+          <h2 className="font-manrope text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Mục tiêu của chúng tôi
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="font-inter text-xl text-gray-600 max-w-3xl mx-auto">
             VNIChain được thiết kế để giải quyết những thách thức lớn nhất trong thế giới blockchain
           </p>
         </div>
@@ -43,16 +43,19 @@ export default function GoalsSection() {
           {goals.map((goal, index) => (
             <div
               key={index}
-              className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100"
+              className="group relative bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 border border-white/50 hover:border-white/80 animate-slide-in"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              {/* Enhanced Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-blue-500/10 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm"></div>
               
               <div className="relative z-10">
-                <div className="text-4xl mb-4">{goal.emoji}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{goal.title}</h3>
-                <p className="text-sm font-medium text-blue-600 mb-4">{goal.subtitle}</p>
-                <p className="text-gray-600 leading-relaxed">{goal.description}</p>
+                <div className="text-4xl mb-4 animate-float" style={{ animationDelay: `${index * 0.2}s` }}>
+                  {goal.emoji}
+                </div>
+                <h3 className="font-manrope text-xl font-bold text-gray-900 mb-2">{goal.title}</h3>
+                <p className="font-inter text-sm font-medium text-blue-600 mb-4">{goal.subtitle}</p>
+                <p className="font-inter text-gray-600 leading-relaxed">{goal.description}</p>
               </div>
             </div>
           ))}
