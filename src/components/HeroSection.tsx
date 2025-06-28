@@ -1,11 +1,21 @@
 
+import { Suspense } from 'react';
 import Hero3D from './Hero3D';
 import { ArrowDown } from 'lucide-react';
 
 export default function HeroSection() {
+  const scrollToNext = () => {
+    const element = document.getElementById('goals');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <Hero3D />
+      <Suspense fallback={<div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 to-purple-900/20" />}>
+        <Hero3D />
+      </Suspense>
       
       {/* Enhanced Glassmorphism overlay */}
       <div className="absolute inset-0 bg-black/20 backdrop-blur-[1px]"></div>
@@ -66,9 +76,12 @@ export default function HeroSection() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <button 
+          onClick={scrollToNext}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce hover:text-orange-400 transition-colors"
+        >
           <ArrowDown className="w-6 h-6 text-white/60" />
-        </div>
+        </button>
       </div>
     </section>
   );
